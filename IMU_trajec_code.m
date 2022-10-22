@@ -1,6 +1,8 @@
 % data = readtable('square.xlsx');
 % data = table2array(square);
 
+%Caution! You have to change data matrix name in "data" for below code.
+
 %Accel is measured in body frame
 accel_x = data(:,1);
 accel_y = data(:,3);
@@ -52,10 +54,6 @@ p_x(k) = p_x(k-1) + v_x(k)* dt;
 p_y(k) = p_y(k-1) + v_y(k)* dt;
 p_z(k) = p_z(k-1) + v_z(k)* dt;
 end
-
-% p_x = -1*p_x;
-% p_y = -1*p_y;
-% p_z = -1*p_z;
 
 velocity = [v_x ;v_y ;v_z];
 position = [p_x ;p_y ;p_z];
